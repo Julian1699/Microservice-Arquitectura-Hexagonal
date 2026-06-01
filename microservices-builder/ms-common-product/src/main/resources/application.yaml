@@ -13,3 +13,9 @@ spring:
     show-sql: true
 server:
   port: 8081
+# Swagger UI: solo endpoints de productos.
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  packages-to-scan: com.practice.infrastructure.controller
+  paths-to-match: /api/product/**

@@ -408,6 +408,12 @@ Mismo cuerpo que crear (sin `id` en el JSON; el id va en la URL).
 
    Variables de la colección: `baseUrl` (por defecto `http://localhost:8081`) y `productId` (para consultar, actualizar o eliminar).
 
+### Swagger UI
+
+Con la app en marcha: http://localhost:8081/swagger-ui.html
+
+Muestra solo los endpoints bajo `/api/product/**`, detectados desde `ProductRestController`. Configuración mínima en `application.yaml` (`springdoc`). No hace falta clase de configuración Java ni anotaciones en DTOs o controllers.
+
 ---
 
 ## Síntesis teórica
