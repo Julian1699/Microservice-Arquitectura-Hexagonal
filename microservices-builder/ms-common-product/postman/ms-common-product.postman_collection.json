@@ -1,0 +1,108 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "ms-common-product",
+    "description": "Colección para el CRUD de productos (arquitectura hexagonal).\n\nBase URL por defecto: http://localhost:8081\n\nImportar en Postman: File → Import → seleccionar este archivo.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081"
+    },
+    {
+      "key": "productId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Teclado mecánico\",\n  \"description\": \"Teclado RGB\",\n  \"price\": 250000,\n  \"stock\": 8\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/product/create-product",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "product", "create-product"]
+        },
+        "description": "Crea un producto. Respuesta esperada: 201 Created."
+      },
+      "response": []
+    },
+    {
+      "name": "Find product by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/product/find-product-by-id/{{productId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "product", "find-product-by-id", "{{productId}}"]
+        },
+        "description": "Consulta un producto por id. Respuesta: 200 OK o 404 Not Found."
+      },
+      "response": []
+    },
+    {
+      "name": "Find all products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/product/find-all-products",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "product", "find-all-products"]
+        },
+        "description": "Lista todos los productos. Respuesta: 200 OK con array JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Update product",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Teclado mecánico Pro\",\n  \"description\": \"Teclado RGB actualizado\",\n  \"price\": 280000,\n  \"stock\": 5\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/product/update-product/{{productId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "product", "update-product", "{{productId}}"]
+        },
+        "description": "Actualiza un producto por id. Respuesta: 200 OK o 404 Not Found."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/product/delete-product/{{productId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "product", "delete-product", "{{productId}}"]
+        },
+        "description": "Elimina un producto por id. Respuesta: 204 No Content o 404 Not Found."
+      },
+      "response": []
+    }
+  ]
+}

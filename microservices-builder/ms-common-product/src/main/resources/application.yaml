@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ms-common-product
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ms_common_product
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+server:
+  port: 8081
