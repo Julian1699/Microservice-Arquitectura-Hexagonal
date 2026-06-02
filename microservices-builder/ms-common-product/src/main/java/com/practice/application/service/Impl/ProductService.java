@@ -1,24 +1,19 @@
-package com.practice.application.service;
+package com.practice.application.service.Impl;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.practice.application.port.in.ICreateProductInputPort;
-import com.practice.application.port.in.IDeleteProductInputPort;
-import com.practice.application.port.in.IFindAllProductsInputPort;
-import com.practice.application.port.in.IFindProductByIdInputPort;
-import com.practice.application.port.in.IUpdateProductInputPort;
 import com.practice.application.port.out.IProductPersistenceOutputPort;
+import com.practice.application.service.ProductServiceUseCase;
 import com.practice.domain.model.Product;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ProductService implements ICreateProductInputPort, IFindProductByIdInputPort,
-        IFindAllProductsInputPort, IUpdateProductInputPort, IDeleteProductInputPort {
+public class ProductService implements ProductServiceUseCase {
 
     private final IProductPersistenceOutputPort productPersistenceOutputPort;
 

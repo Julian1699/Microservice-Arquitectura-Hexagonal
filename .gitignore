@@ -1,0 +1,69 @@
+# =============================================================================
+# Raíz del repositorio — aplica a todos los módulos y subcarpetas
+# =============================================================================
+
+# --- IDE (IntelliJ, Eclipse, VS Code, NetBeans) ---
+.idea/
+**/.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.factorypath
+.apt_generated/
+.sts4-cache/
+.springBeans
+.vscode/
+*.swp
+*~
+out/
+bin/
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# --- Maven / compilación ---
+**/target/
+**/build/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar.asc
+
+# Código generado (MapStruct, annotation processors, etc.)
+**/generated-sources/
+**/generated-test-sources/
+
+# --- Spring Boot / plantillas locales ---
+HELP.md
+**/HELP.md
+
+# --- Logs y temporales ---
+*.log
+logs/
+*.tmp
+*.temp
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Secretos y entorno local ---
+.env
+.env.*
+!.env.example
+
+# --- Binarios empaquetados (salvo que se versionen a propósito) ---
+*.jar
+*.war
+*.ear
