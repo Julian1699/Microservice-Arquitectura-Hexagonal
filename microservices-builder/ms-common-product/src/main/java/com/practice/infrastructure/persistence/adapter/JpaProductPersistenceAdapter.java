@@ -1,19 +1,22 @@
-package com.practice.infrastructure.persistence;
+package com.practice.infrastructure.persistence.adapter;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import com.practice.application.port.out.IProductPersistenceOutputPort;
+import com.practice.application.port.out.ProductPersistencePort;
 import com.practice.domain.model.Product;
+import com.practice.infrastructure.persistence.entity.ProductEntity;
 import com.practice.infrastructure.persistence.mapper.ProductPersistenceMapper;
+import com.practice.infrastructure.persistence.repository.ProductJpaRepository;
 
 import lombok.RequiredArgsConstructor;
 
+// Adaptador de persistencia (driven): implementa ProductPersistencePort y oculta el detalle de BD al núcleo.
 @Repository
 @RequiredArgsConstructor
-public class JpaProductPersistenceAdapter implements IProductPersistenceOutputPort {
+public class JpaProductPersistenceAdapter implements ProductPersistencePort {
 
     private final ProductJpaRepository productJpaRepository;
 
@@ -33,19 +36,12 @@ public class JpaProductPersistenceAdapter implements IProductPersistenceOutputPo
 
     @Override
     public List<Product> findAll() {
-        return productJpaRepository.findAll().stream()
-            .map(productPersistenceMapper::toDomain)
-            .toList();
+        return productJpaRepository.findAll().stream().map(productPersistenceMapper::toDomain).toList();
     }
 
     @Override
     public void deleteById(Long id) {
         productJpaRepository.deleteById(id);
-    }
-
-    @Override
-    public boolean existsById(Long id) {
-        return productJpaRepository.existsById(id);
     }
 
 }

@@ -52,7 +52,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Tests: JUnit 5, Mockito, AssertJ, Spring Test (versiones vía Spring Boot BOM) -->
+		<!-- Dependencias de prueba: JUnit 5, Mockito y Spring Test (versiones gestionadas por Spring Boot BOM) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

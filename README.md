@@ -51,21 +51,6 @@ Los módulos usan **JUnit 5** y **Mockito** (declarados en cada `pom.xml` del mi
 mvn test -pl ms-common-product
 ```
 
-## Qué no se versiona
-
-El `.gitignore` de la raíz excluye, en cualquier nivel:
-
-- Carpetas `.idea/`, `*.iml`, `.vscode/`
-- `target/`, `build/`, código generado (`generated-sources`, MapStruct `*MapperImpl`)
-- Secretos (`.env`), logs y artefactos locales
-
-Si `.idea` quedó trackeada antes del ignore, quitarla del índice de Git:
-
-```bash
-git rm -r --cached .idea
-git commit -m "chore: dejar de versionar configuración de IDE"
-```
-
 ## Documentación por módulo
 
 Detalle de arquitectura, endpoints y Swagger: ver [microservices-builder/ms-common-product/README.md](microservices-builder/ms-common-product/README.md).

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+// Núcleo de dominio: modelo de producto independiente de adaptadores web y de persistencia.
 @Getter
 @Setter
 @Builder

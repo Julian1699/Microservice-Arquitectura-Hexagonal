@@ -1,9 +1,10 @@
-package com.practice.infrastructure.controller.dto;
+package com.practice.infrastructure.web.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
+// Contrato de entrada del adaptador web para actualizaciones; se traduce a Product antes de ProductUseCase.
 @Getter
 @Setter
 @Schema(description = "Datos para actualizar un producto")
