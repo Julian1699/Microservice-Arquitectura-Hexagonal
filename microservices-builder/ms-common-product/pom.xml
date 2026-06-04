@@ -52,31 +52,14 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Dependencias de prueba: JUnit 5, Mockito y Spring Test (versiones gestionadas por Spring Boot BOM) -->
+		<!-- Incluye JUnit, Mockito y herramientas de prueba de Spring Boot. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency>
-
+		<!-- Base de datos en memoria para pruebas de integración. -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
